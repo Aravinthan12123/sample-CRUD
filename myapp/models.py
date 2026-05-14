@@ -24,3 +24,5 @@ class Forms(models.Model):
     def __str__(self):
         return f"{self.full_name} - {self.email}"
     
+
+

@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from openpyxl import Workbook
-from django.http import HttpResponse
+from django.http import HttpResponse 
 
 # Create your views here.
 
@@ -169,7 +169,8 @@ def table_edit(request, id):
 from django.shortcuts import get_object_or_404, redirect
 
 def table_delete(request, id):
-    form = get_object_or_404(Forms, id=id)   # find record or 404
+    # form = get_object_or_404(Forms, id=id) 
+    form = Forms.objects.filter(id=id)  # find record or 404
     form.delete()                            # delete from DB
     return redirect("table")                 # redirect to your table page
 
